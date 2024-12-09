@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git branch: 'main', url: 'https://github.com/akhil2099/react-nodejs.git'
+                git branch: 'master', url: 'https://github.com/akhil2099/react-nodejs.git'
             }
         }
         stage('Build Docker Image') {
