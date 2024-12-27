@@ -1,6 +1,5 @@
 name: Build and Deploy React-Node.js App with CapRover
 
-
 on: [push, pull_request]
 
 jobs:
@@ -23,6 +22,7 @@ jobs:
         registry: ghcr.io
         username: ${{ github.repository_owner }}
         password: ${{ secrets.GITHUB_TOKEN }}
+
     # Step 5: Build and Push Docker Image
     - name: Build and Push Docker Image
       uses: docker/build-push-action@v5
@@ -34,6 +34,8 @@ jobs:
 
     # Step 6: Deploy the Docker Image to CapRover
     - name: Deploy Image to CapRover
+      env:
+        NODE_TLS_REJECT_UNAUTHORIZED: 0  # Disabling SSL verification
       uses: caprover/deploy-from-github@v1.1.2
       with:
         server: "${{ secrets.APP_SERVER }}"
