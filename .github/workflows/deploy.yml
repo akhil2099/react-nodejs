@@ -38,5 +38,5 @@ jobs:
         server: "${{ secrets.APP_SERVER }}"
         app: "${{ secrets.APP_NAME }}"
         token: "${{ secrets.APP_TOKEN }}"
-        image: ghcr.io/${{ github.repository_owner }}/react-node-app:${{ github.sha }}
+        image: ghcr.io/akhil2099/react-node-app:87a54ff2ec1c58fc9e8c1f1d53a36591f4131595
 
