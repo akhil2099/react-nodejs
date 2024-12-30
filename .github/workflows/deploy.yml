@@ -40,6 +40,6 @@ jobs:
           NODE_TLS_REJECT_UNAUTHORIZED: 0  # Only use temporarily for testing
         with:
           server: '${{ secrets.APP_SERVER }}'
-          app: '${{ secrets.APP_NAME }}'
+          app: react
           token: '${{ secrets.APP_TOKEN }}'
           image: ghcr.io/${{ github.repository_owner }}/react-node-app:${{ github.sha }}
